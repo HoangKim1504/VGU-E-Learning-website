@@ -20,10 +20,13 @@ function Signup() {
       .post("http://localhost:5000/signup", { name, email, password })
       .then((result) => {
         console.log(result);
-        if (result.data === "Registered successfully") {
+        if (result.data === "Registration and Profile creation successfully") {
           navigate("/login");
           alert("User registered successfully");
-        } else if (result.data === "Registration failed") {
+        } else if (
+          result.data ===
+          "Registration successfully and Profile creation failed"
+        ) {
           navigate("/signup");
           alert("User registered unsuccessfully");
         }
